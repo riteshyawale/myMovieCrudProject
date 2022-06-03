@@ -1,0 +1,49 @@
+﻿@model MovieApp.Entity.BookingModel
+
+@{
+    ViewData["Title"] = "DeleteBooking";
+}
+
+<h2>DeleteBooking</h2>
+
+<h4>BookingModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DeleteBookings">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="bookingid" class="control-label"></label>
+                <input asp-for="bookingid" class="form-control" readonly />
+                <span asp-validation-for="bookingid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="seats" class="control-label"></label>
+                <input asp-for="seats" class="form-control" readonly/>
+                <span asp-validation-for="seats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="showTimeModelId" class="control-label"></label>
+                <input asp-for="showTimeModelId" class="form-control" readonly />
+                <span asp-validation-for="showTimeModelId" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="price" class="control-label"></label>
+                <input asp-for="price" class="form-control" readonly/>
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ShowBookings">Back to List</a>
+</div>
+

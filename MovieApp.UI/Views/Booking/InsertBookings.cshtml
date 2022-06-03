@@ -1,0 +1,35 @@
+﻿@model MovieApp.Entity.BookingModel
+@{ ViewData["Title"] = "InsertMovieShowTimes"; }
+
+<a asp-action="ShowBookings" asp-controller="Booking">Show Movie Time Details</a>
+<hr />
+<h1>InsertMovieShowTime</h1>
+<hr />
+
+<form method="post">
+    <div class="form-group">
+        <label>Movie</label>
+        <select asp-for="showTimeModelId" asp-items="@(new SelectList(ViewBag.movieTimeData,"Value","Text"))" class="form-control"></select>
+    </div>
+    
+
+
+    <div class="form-group">
+        <label>Seats</label>
+        <input type="number" class="form-control" asp-for="seats" />
+    </div>
+
+    <div class="form-group">
+        <label>Price</label>
+        <input type="number" class="form-control" asp-for="price" />
+    </div>
+
+    <input type="submit" value="Save" class="btn btn-primary" />
+    <input type="button" value="Reset" class="btn btn-secondary" />
+</form>
+@if (ViewBag.status == "Success")
+{
+<div class="alert alert-success">@ViewBag.message</div> }
+            else if (ViewBag.status == "Error")
+            {
+<div class="alert alert-danger">@ViewBag.message</div>}
